@@ -1,0 +1,4 @@
+module CNIOZlib {
+    umbrella "/Users/jgh/Downloads/SwiftServerSide-Vapor-master/VaporServer/.build/checkouts/swift-nio.git--7067672761128524543/Sources/CNIOZlib/include"
+    export *
+}
