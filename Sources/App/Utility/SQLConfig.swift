@@ -21,6 +21,8 @@ extension PostgreSQLDatabaseConfig {
         var port = 5432
         
         #if os(Linux)
+        var username = "postgres"
+        var password = "123321"
         let manager = FileManager.default
         let path = "/home/ubuntu/base.json"
         if let data = manager.contents(atPath: path) {
@@ -46,19 +48,13 @@ extension PostgreSQLDatabaseConfig {
         
         PrintLogger().info("启动数据库：\(database) \n")
         
-        #if os(Linux)
+      
         return PostgreSQLDatabaseConfig(hostname: hostname,
                                         port: port,
                                         username: username,
                                         database: database,
                                         password:password)
-        #else
-        return PostgreSQLDatabaseConfig(hostname: hostname,
-                                        port: port,
-                                        username: username,
-                                        database: database,
-                                        password: "123")
-        #endif
+
     }
         
 }
